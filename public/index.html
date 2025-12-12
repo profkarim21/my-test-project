@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>User Management Dashboard</title>
+    <!-- The new CSS file already imports the font, so no extra link is needed here -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>User Management Dashboard</h1>
+      <section id="server-status" class="card">
+        <h2>Server Status</h2>
+        <div class="status-container">
+          <div id="status">Checking server connection...</div>
+          <button id="check-btn">Check Connection</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Users List</h2>
+        <button id="load-users">Load Users</button>
+        <div id="users-list"></div>
+      </section>
+
+      <section class="card">
+        <h2>Add New User</h2>
+        <form id="single-form">
+          <label for="name">Name:</label>
+          <input id="name" name="name" type="text" required />
+          <label for="email">Email:</label>
+          <input id="email" name="email" type="email" required />
+          <label for="password">Password:</label>
+          <input id="password" name="password" type="password" required />
+          <button type="submit">Add User</button>
+        </form>
+        <pre id="single-result"></pre>
+      </section>
+
+      <section class="card">
+        <h2>Update User</h2>
+        <p>
+          Enter the user's email to identify them, and provide a new name and/or
+          password.
+        </p>
+        <form id="update-form">
+          <label for="update-email">User's Email (to find):</label>
+          <input id="update-email" name="email" type="email" required />
+          <label for="update-name">New Name (optional):</label>
+          <input id="update-name" name="name" type="text" />
+          <label for="update-password">New Password (optional):</label>
+          <input id="update-password" name="password" type="password" />
+          <button type="submit">Update User</button>
+        </form>
+        <pre id="update-result"></pre>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
